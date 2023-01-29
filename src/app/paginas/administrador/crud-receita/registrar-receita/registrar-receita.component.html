@@ -1,0 +1,80 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          required
+          [(ngModel)]="receita.nome"
+          name="nome"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="categoria">Categoria</label>
+        <input
+          class="form-control"
+          id="categoria"
+          required
+          [(ngModel)]="receita.categoria"
+          name="categoria"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="ingredientes">Ingredientes</label>
+        <input
+          class="form-control"
+          id="ingredientes"
+          required
+          [(ngModel)]="receita.ingredientes"
+          name="ingredientes"
+        />
+      </div>
+      <div class="form-group">
+        <label for="porcoes">Porções</label>
+        <input
+          class="form-control"
+          id="porcoes"
+          required
+          [(ngModel)]="receita.porcoes"
+          name="porcoes"
+        />
+      </div>
+      <div class="form-group">
+        <label for="tempodepreparo">Tempo de preparo</label>
+        <input
+          class="form-control"
+          id="tempodepreparo"
+          required
+          [(ngModel)]="receita.tempodepreparo"
+          name="tempodepreparo"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="mododepreparo">Modo de Preparo</label>
+        <input
+          class="form-control"
+          id="mododepreparo"
+          required
+          [(ngModel)]="receita.mododepreparo"
+          name="tempodepreparo"
+        />
+      </div>
+      <button (click)="saveReceita()" class="btn btn-success">Registrar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Receita registrada com sucesso!</h4>
+      <button class="btn btn-success" (click)="newReceita()">Adicionar nova receita</button>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>

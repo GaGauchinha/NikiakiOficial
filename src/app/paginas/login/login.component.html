@@ -46,13 +46,13 @@
           role="alert"
           *ngIf="f.submitted && isLoginFailed"
         >
-          Login failed: {{ errorMessage }}
+          Login deu erro: {{ errorMessage }}
         </div>
       </div>
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
-      Logged in as {{usuario.username }}.
+      Logado com o username: {{usuario.username }}.
     </div>
   </div>
 </div>

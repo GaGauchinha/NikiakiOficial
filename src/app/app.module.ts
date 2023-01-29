@@ -8,13 +8,14 @@ import { EditarReceitaComponent } from './paginas/administrador/crud-receita/edi
 import { RdUsuarioComponent } from './paginas/administrador/rd-usuario/rd-usuario.component';
 import { CadastrarUsuarioComponent } from './paginas/usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { ListaReceitaComponent } from './paginas/usuario/lista-receita/lista-receita.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './paginas/login/login.component';
 import {authInterceptorProviders} from "./helpers/auth.interceptor";
 import { AdministradorComponent } from './paginas/administrador/administrador.component';
 import { UsuarioComponent } from './paginas/usuario/usuario.component';
 import { HomeComponent } from './home/home.component';
+import { ListagemReceitasComponent } from './paginas/usuario/listagem-receitas/listagem-receitas.component';
 
 
 @NgModule({
@@ -29,13 +30,17 @@ import { HomeComponent } from './home/home.component';
     AdministradorComponent,
     UsuarioComponent,
     HomeComponent,
+    ListagemReceitasComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
+
   providers: [authInterceptorProviders ],
   bootstrap: [AppComponent]
 })

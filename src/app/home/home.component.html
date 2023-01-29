@@ -1,0 +1,118 @@
+<div class="container" id="carrossel">
+  <div class="row">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-none d-lg-block">
+            <div class="slide-box">
+              <img src="assets/image/carrossel/1.jpeg" alt="Primeiro slide">
+              <img src="assets/image/carrossel/2.jpeg" alt="Primeiro slide">
+              <img src="assets/image/carrossel/3.jpeg" alt="Primeiro slide">
+              <img src="assets/image/carrossel/4.jpeg" alt="Primeiro slide">
+            </div>
+          </div>
+          <div class="d-none d-md-block d-lg-none">
+            <div class="slide-box">
+              <img src="assets/image/carrossel/1.jpeg" alt="Primeiro slide">
+              <img src="assets/image/carrossel/2.jpeg" alt="Primeiro slide">
+              <img src="assets/image/carrossel/3.jpeg" alt="Primeiro slide">
+            </div>
+          </div>
+          <div class="d-none d-sm-block d-md-none">
+            <div class="slide-box">
+              <img src="assets/image/carrossel/1.jpeg" alt="Primeiro slide">
+              <img src="assets/image/carrossel/2.jpeg" alt="Primeiro slide">
+            </div>
+          </div>
+          <div class="d-block d-sm-none">
+            <img class="d-block w-100" src="assets/image/carrossel/1.jpeg" alt="Primeiro slide">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-none d-lg-block">
+            <div class="slide-box">
+              <img src="assets/image/carrossel/5.jpeg" alt="Segundo slide">
+              <img src="assets/image/carrossel/6.jpg" alt="Segundo slide">
+              <img src="assets/image/carrossel/7.jpg" alt="Segundo slide">
+              <img src="assets/image/carrossel/8.jpg" alt="Segundo slide">
+            </div>
+          </div>
+          <div class="d-none d-md-block d-lg-none">
+            <div class="slide-box">
+              <img src="assets/image/carrossel/5.jpeg" alt="Segundo slide">
+              <img src="assets/image/carrossel/6.jpg" alt="Segundo slide">
+              <img src="assets/image/carrossel/7.jpg" alt="Segundo slide">
+            </div>
+          </div>
+          <div class="d-none d-sm-block d-md-none">
+            <div class="slide-box">
+              <img src="assets/image/carrossel/5.jpeg" alt="Segundo slide">
+              <img src="assets/image/carrossel/6.jpg" alt="Segundo slide">
+            </div>
+          </div>
+          <div class="d-block d-sm-none">
+            <img class="d-block w-100" src="assets/image/carrossel/5.jpeg" alt="Segundo slide">
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="separador">
+  <h4 class="nome-do-separador">Lista de Receitas</h4>
+</div>
+
+<div class="col-md-6 mt-50">
+  <ul class="list-group">
+    <li
+      class="list-group-item lista-receita-dados"
+      *ngFor="let receita of receita; let i = index"
+      [class.active]="i == currentIndex"
+      (click)="setActiveReceita(receita, i)"
+    >
+      {{ receita.nome }}
+    </li>
+  </ul>
+</div>
+
+<div class="col-md-6 detalhes-receita">
+  <div *ngIf="currentReceita" class="teste">
+    <h4>Receita</h4>
+    <div>
+      <label><strong>Nome:</strong></label> {{ currentReceita.nome }}
+    </div>
+    <div>
+      <label><strong>Categoria:</strong></label>
+      {{ currentReceita.categoria }}
+    </div>
+    <div>
+      <label><strong>Ingredientes:</strong></label>
+      {{ currentReceita.ingredientes}}
+    </div>
+    <div>
+      <label><strong>Porções:</strong></label>
+      {{ currentReceita.porcoes }}
+    </div>
+    <div>
+      <label><strong>Tempo de preparo:</strong></label>
+      {{ currentReceita.tempodepreparo }}
+    </div>
+    <div>
+      <label><strong>Modo de preparo:</strong></label>
+      {{ currentReceita.mododepreparo }}
+    </div>
+  </div>
+</div>

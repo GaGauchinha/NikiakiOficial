@@ -1,0 +1,54 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Lista de Receitas</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let receita of receita; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveReceita(receita, i)"
+      >
+        {{ receita.nome }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <div *ngIf="currentReceita">
+      <h4>Receita</h4>
+      <div>
+        <label><strong>Nome:</strong></label> {{ currentReceita.nome }}
+      </div>
+      <div>
+        <label><strong>Categoria:</strong></label>
+        {{ currentReceita.categoria }}
+      </div>
+      <div>
+        <label><strong>Ingredientes:</strong></label>
+        {{ currentReceita.ingredientes}}
+      </div>
+      <div>
+        <label><strong>Porções:</strong></label>
+        {{ currentReceita.porcoes }}
+      </div>
+      <div>
+        <label><strong>Tempo de preparo:</strong></label>
+        {{ currentReceita.tempodepreparo }}
+      </div>
+      <div>
+        <label><strong>Modo de preparo:</strong></label>
+        {{ currentReceita.mododepreparo }}
+      </div>
+
+    </div>
+
+    <div *ngIf="!currentReceita">
+      <br />
+      <p>Clique em uma receita</p>
+    </div>
+  </div>
