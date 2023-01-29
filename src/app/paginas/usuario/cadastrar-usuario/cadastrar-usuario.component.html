@@ -1,0 +1,77 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          required
+          [(ngModel)]="usuario.username"
+          name="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          required
+          [(ngModel)]="usuario.nome"
+          name="nome"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input
+          class="form-control"
+          id="senha"
+          required
+          [(ngModel)]="usuario.senha"
+          name="senha"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          class="form-control"
+          id="email"
+          required
+          [(ngModel)]="usuario.email"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input
+          class="form-control"
+          id="cpf"
+          required
+          [(ngModel)]="usuario.cpf"
+          name="cpf"
+        />
+      </div>
+      <div class="form-group">
+        <label for="celular">Celular</label>
+        <input
+          class="form-control"
+          id="celular"
+          required
+          [(ngModel)]="usuario.celular"
+          name="celular"
+        />
+      </div>
+      <button (click)="saveUsuario()" class="btn btn-success">Registrar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Usuário registrado com sucesso!</h4>
+      <button class="btn btn-success" (click)="newUsuario()">Cadastrar</button>
+    </div>
+  </div>
+</div>
+
