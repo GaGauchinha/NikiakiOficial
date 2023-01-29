@@ -28,12 +28,27 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a routerLink="registrar-receita" class="nav-link">Registrar Receitas</a></li>
-            <li class="nav-item"><a routerLink="lista-receita" class="nav-link">Listar Receitas</a></li>
-            <li class="nav-item"><a routerLink="editar-receita"  class="nav-link">Editar Receitas</a></li>
-            <li class="nav-item"><a routerLink="cadastrar-usuario"  class="nav-link">Registrar Usuário</a></li>
-            <li class="nav-item"><a routerLink="rd-usuario" class="nav-link">Listar Usuário</a></li>
+            <li class="nav-item"><a href="/admin" routerLink="admin" *ngIf="isLoggedIn" class="nav-link">Admin</a></li>
+            <li class="nav-item"><a href="/usuario" routerLink="usuario" *ngIf="isLoggedIn" class="nav-link">Listar Receitas</a></li>
+            <li class="nav-item"><a href="/registrar-receita"  class="nav-link">Registrar Receitas</a></li>
+
           </ul>
+
+          <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+            <li class="nav-item">
+              <a href="/cadastrar-usuario" class="nav-link" routerLink="cadastrar-usuario">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a href="/login" class="nav-link" routerLink="login">Login</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+            <li class="nav-item">
+              <a href class="nav-link" (click)="logout()">LogOut</a>
+            </li>
+          </ul>
+
         </div>
       </div>
     </nav>

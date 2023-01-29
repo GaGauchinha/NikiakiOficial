@@ -1,1 +1,58 @@
-<p>login works!</p>
+<div class="col-md-12">
+  <img src="assets/image/do-utilizador.png" id="icone-usuario">
+  <div class="card card-container">
+    <form
+      *ngIf="!isLoggedIn"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    ><div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        required
+        [(ngModel)]="usuario.username"
+        name="username"
+      />
+    </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input
+          class="form-control"
+          id="senha"
+          required
+          [(ngModel)]="usuario.senha"
+          name="senha"
+          #senha="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="senha.errors && f.submitted"
+        >
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">
+          Login
+        </button>
+      </div>
+      <div class="form-group">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && isLoginFailed"
+        >
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      Logged in as {{usuario.username }}.
+    </div>
+  </div>
+</div>

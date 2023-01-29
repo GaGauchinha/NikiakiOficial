@@ -7,6 +7,9 @@ import {
 } from "./paginas/administrador/crud-receita/registrar-receita/registrar-receita.component";
 import {RdUsuarioComponent} from "./paginas/administrador/rd-usuario/rd-usuario.component";
 import {CadastrarUsuarioComponent} from "./paginas/usuario/cadastrar-usuario/cadastrar-usuario.component";
+import {LoginComponent} from "./paginas/login/login.component";
+import {AdministradorComponent} from "./paginas/administrador/administrador.component";
+import {UsuarioComponent} from "./paginas/usuario/usuario.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'lista-receita', pathMatch: 'full' },
@@ -15,7 +18,12 @@ const routes: Routes = [
   { path: 'registrar-receita', component: RegistrarReceitaComponent },
   { path: 'rd-usuario', component: RdUsuarioComponent },
   { path: 'rd-usuario/:id', component: RdUsuarioComponent },
-  { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent }
+  { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent },
+  { path: 'admin', component: AdministradorComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'usuario', component: UsuarioComponent },
+
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

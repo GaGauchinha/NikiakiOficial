@@ -12,6 +12,8 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './paginas/login/login.component';
 import {authInterceptorProviders} from "./helpers/auth.interceptor";
+import { AdministradorComponent } from './paginas/administrador/administrador.component';
+import { UsuarioComponent } from './paginas/usuario/usuario.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import {authInterceptorProviders} from "./helpers/auth.interceptor";
     CadastrarUsuarioComponent,
     ListaReceitaComponent,
     LoginComponent,
+    AdministradorComponent,
+    UsuarioComponent,
   ],
   imports: [
     BrowserModule,
