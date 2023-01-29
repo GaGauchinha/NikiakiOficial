@@ -14,6 +14,7 @@ import { LoginComponent } from './paginas/login/login.component';
 import {authInterceptorProviders} from "./helpers/auth.interceptor";
 import { AdministradorComponent } from './paginas/administrador/administrador.component';
 import { UsuarioComponent } from './paginas/usuario/usuario.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { UsuarioComponent } from './paginas/usuario/usuario.component';
     LoginComponent,
     AdministradorComponent,
     UsuarioComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

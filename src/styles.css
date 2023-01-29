@@ -3,6 +3,8 @@
 
 #menu{
     background-color: #f1d07c;
+  color: black;
+
 }
 .logo{
     width:20%;
@@ -10,10 +12,18 @@
 #search{
     width: 40px;
 }
+.icone-usuario{
+  width: 10%;
+  margin-left: 460px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 #encontre{
 width:10em;
 }
-
+.icones-midia{
+  margin-top: 24px;
+}
 @media (min-width: 400px) and (max-width: 767.98px) {
   #encontre{
     width:7em;
@@ -204,3 +214,28 @@ width:10em;
 
 }
 /*Fim dos Títulos Receitas*/
+
+.detalhes-receita{
+  float:right;
+  font-family: "Segoe MDL2 Assets";
+  font-size: 20px;
+}
+
+.lista-receita-dados:active{
+  background-color: #A6C55B ;
+}
+
+.separador{
+  background-color: #f1d07c;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+.nome-do-separador{
+  text-align: center;
+  padding:8px;
+}
+.mt-50{
+  margin-top:50px;
+}
+

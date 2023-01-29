@@ -10,9 +10,11 @@ import {CadastrarUsuarioComponent} from "./paginas/usuario/cadastrar-usuario/cad
 import {LoginComponent} from "./paginas/login/login.component";
 import {AdministradorComponent} from "./paginas/administrador/administrador.component";
 import {UsuarioComponent} from "./paginas/usuario/usuario.component";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'lista-receita', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'lista-receita', component: ListaReceitaComponent },
   { path: 'editar-receita/:id', component: EditarReceitaComponent },
   { path: 'registrar-receita', component: RegistrarReceitaComponent },

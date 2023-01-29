@@ -1,14 +1,13 @@
 
 <div>
-
-<section class="ftco-section">
+  <section class="ftco-section">
 
   <div class="container">
     <div class="row justify-content-between">
       <div class="col">
         <a class="navbar-brand " href="index.html"><img class= "logo" src="assets/image/logo/logo.png"></a>
       </div>
-      <div class="col d-flex justify-content-end">
+      <div class="col d-flex justify-content-end icones-midia">
         <div class="social-media">
           <p class="mb-0 d-flex">
             <a href="https://www.tiktok.com/@nikiaki_foods" class="d-flex align-items-center justify-content-center"><span class="fa"><img src="assets/image/header/tiktok.png"></span></a>
@@ -29,23 +28,22 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a href="/admin" routerLink="admin" *ngIf="isLoggedIn" class="nav-link">Admin</a></li>
-            <li class="nav-item"><a href="/usuario" routerLink="usuario" *ngIf="isLoggedIn" class="nav-link">Listar Receitas</a></li>
-            <li class="nav-item"><a href="/registrar-receita"  class="nav-link">Registrar Receitas</a></li>
+            <li class="nav-item"><a href="/lista-receita" class="nav-link">Listar Receitas</a></li>
 
           </ul>
 
           <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-            <li class="nav-item">
-              <a href="/cadastrar-usuario" class="nav-link" routerLink="cadastrar-usuario">Sign Up</a>
+            <li class="nav-item ">
+              <a href="/cadastrar-usuario" class="nav-link " routerLink="cadastrar-usuario">Sign Up</a>
             </li>
-            <li class="nav-item">
-              <a href="/login" class="nav-link" routerLink="login">Login</a>
+            <li class="nav-item funcoes">
+              <a href="/login" class="nav-link " routerLink="login">Login</a>
             </li>
           </ul>
 
           <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-            <li class="nav-item">
-              <a href class="nav-link" (click)="logout()">LogOut</a>
+            <li class="nav-item funcoes">
+              <a href class="nav-link " (click)="logout()">LogOut</a>
             </li>
           </ul>
 
@@ -55,79 +53,10 @@
     <!-- END nav -->
   </div>
 </section>
-<div class="container" id="carrossel">
-  <div class="row">
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel" data-slide-to="1"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="d-none d-lg-block">
-            <div class="slide-box">
-              <img src="assets/image/carrossel/1.jpeg" alt="Primeiro slide">
-              <img src="assets/image/carrossel/2.jpeg" alt="Primeiro slide">
-              <img src="assets/image/carrossel/3.jpeg" alt="Primeiro slide">
-              <img src="assets/image/carrossel/4.jpeg" alt="Primeiro slide">
-            </div>
-          </div>
-          <div class="d-none d-md-block d-lg-none">
-            <div class="slide-box">
-              <img src="assets/image/carrossel/1.jpeg" alt="Primeiro slide">
-              <img src="assets/image/carrossel/2.jpeg" alt="Primeiro slide">
-              <img src="assets/image/carrossel/3.jpeg" alt="Primeiro slide">
-            </div>
-          </div>
-          <div class="d-none d-sm-block d-md-none">
-            <div class="slide-box">
-              <img src="assets/image/carrossel/1.jpeg" alt="Primeiro slide">
-              <img src="assets/image/carrossel/2.jpeg" alt="Primeiro slide">
-            </div>
-          </div>
-          <div class="d-block d-sm-none">
-            <img class="d-block w-100" src="assets/image/carrossel/1.jpeg" alt="Primeiro slide">
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="d-none d-lg-block">
-            <div class="slide-box">
-              <img src="assets/image/carrossel/5.jpeg" alt="Segundo slide">
-              <img src="assets/image/carrossel/6.jpg" alt="Segundo slide">
-              <img src="assets/image/carrossel/7.jpg" alt="Segundo slide">
-              <img src="assets/image/carrossel/8.jpg" alt="Segundo slide">
-            </div>
-          </div>
-          <div class="d-none d-md-block d-lg-none">
-            <div class="slide-box">
-              <img src="assets/image/carrossel/5.jpeg" alt="Segundo slide">
-              <img src="assets/image/carrossel/6.jpg" alt="Segundo slide">
-              <img src="assets/image/carrossel/7.jpg" alt="Segundo slide">
-            </div>
-          </div>
-          <div class="d-none d-sm-block d-md-none">
-            <div class="slide-box">
-              <img src="assets/image/carrossel/5.jpeg" alt="Segundo slide">
-              <img src="assets/image/carrossel/6.jpg" alt="Segundo slide">
-            </div>
-          </div>
-          <div class="d-block d-sm-none">
-            <img class="d-block w-100" src="assets/image/carrossel/5.jpeg" alt="Segundo slide">
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Anterior</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Próximo</span>
-      </a>
-    </div>
-  </div>
-</div>
 
+<footer>
+
+</footer>
 <div class="container mt-3">
   <router-outlet></router-outlet>
 </div>
