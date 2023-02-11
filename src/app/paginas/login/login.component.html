@@ -1,58 +1,34 @@
-<div class="col-md-12">
-  <img class="icone-usuario" src="assets/image/do-utilizador.png" id="icone-usuario" >
-  <div class="card card-container">
-    <form
-      *ngIf="!isLoggedIn"
-      name="form"
-      (ngSubmit)="f.form.valid && onSubmit()"
-      #f="ngForm"
-      novalidate
-    ><div class="form-group">
-      <label for="username">Username</label>
-      <input
-        type="text"
-        class="form-control"
-        id="username"
-        required
-        [(ngModel)]="usuario.username"
-        name="username"
-      />
-    </div>
-      <div class="form-group">
-        <label for="senha">Senha</label>
-        <input
-          class="form-control"
-          id="senha"
-          required
-          [(ngModel)]="usuario.senha"
-          name="senha"
-          #senha="ngModel"
-        />
-        <div
-          class="alert alert-danger"
-          role="alert"
-          *ngIf="senha.errors && f.submitted"
-        >
-        </div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary btn-block">
-          Login
-        </button>
-      </div>
-      <div class="form-group">
-        <div
-          class="alert alert-danger"
-          role="alert"
-          *ngIf="f.submitted && isLoginFailed"
-        >
-          Login deu erro: {{ errorMessage }}
-        </div>
-      </div>
-    </form>
+<div class="screen-1">
+<div class="container">
+    <div class="black">
+        <section>
+            <div class="signin ">
+                <div class="content">
+                    <h2>Logar</h2>
+                    <div class="d-flex justify-content-between ">
+                        <form [formGroup]="formLogin" (ngSubmit)="login()">
+                            <div class="email ">
+                                <label for="username" class="form-label">Username:</label>
+                              <div class="sec-2">
+                              <input formControlName="username" type="text"
+                                     class="form-control" id="username" name="username" required>
+                              </div>
+                            </div>
 
-    <div class="alert alert-success" *ngIf="isLoggedIn">
-      Logado com o username: {{usuario.username }}.
+                            <div class="password">
+                                <label for="password" class="form-label">Password:</label>
+                              <div class="sec-2">
+                                <input formControlName="password" type="password"
+                                       class="form-control" id="password" name="password" required>
+                              </div>
+                            </div>
+
+                                    <button type="submit"  class="login">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </div>
+</div>
 </div>

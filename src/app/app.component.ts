@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TokenStorageService} from "./services/token-storage.service";
+import {LoginService} from "./services/login.service";
 
 @Component({
   selector: 'app-root',
@@ -8,36 +8,21 @@ import {TokenStorageService} from "./services/token-storage.service";
 })
 
 export class AppComponent {
-  title = 'NikiakiOficial';
-  private roles: string[] = [];
   isLoggedIn = false;
-  showAdminBoard = false;
-  showUsuarioBoard = false;
-  username?: string;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  title = 'PilacoinAngular';
+  username?: string;
+  constructor(private loginService: LoginService) { }
+
 
   ngOnInit(): void {
-    console.log("ENTROU NO ISLOGGEDIN");
-
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
-
     if (this.isLoggedIn) {
-      const usuario = this.tokenStorageService.getUsuario();
-
-      if (usuario.isAdmin) {
-        console.log(usuario.isAdmin)
-        this.showAdminBoard
-      } else {
-        this.showUsuarioBoard
-      }
+      const usuario = this.loginService.getLoggedUser()
       this.username = usuario.username;
-      console.log(usuario)
-
     }
   }
   logout(): void {
-    this.tokenStorageService.signOut();
+    this.loginService.logout();
     window.location.reload();
   }
 }

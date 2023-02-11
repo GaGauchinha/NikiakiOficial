@@ -2,7 +2,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 #menu{
-  background-color: #f1d07c;
+  background-color: #f0aafc;
 }
 .logo{
   width:20%;
@@ -18,6 +18,9 @@
   #encontre{
     width:7em;
   }
+}
+.nav-item{
+  color: white;
 }
 #destaque{
   background-color: #f1d07c;

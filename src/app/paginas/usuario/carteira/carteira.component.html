@@ -1,0 +1,42 @@
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between ">
+        <div class="d-flex">
+            <div *ngIf="minerando">
+                <div class="spin">
+                    <img src="../../../../assets/image/money-management.png" width="64" height="64" />
+                </div>
+            </div>
+            <div *ngIf="!minerando">
+                <img src="../../../../assets/image/money-management (1).png" width="64" height="64" />
+            </div>
+                <h1>Carteira</h1>
+        </div>
+        <div class="pilacoin-count-card">
+            <div class="total">total</div>
+            <h2 class="pilacoin-count">{{pilacoinCount}}</h2>
+        </div>
+        <div class="d-flex" style="max-height: 36px;">
+            <button (click)="minerar()" class="btn box-minerar">
+                {{ mineracaoButtonText }}
+            </button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between " style="flex-direction: row-reverse;">
+        <pagination-controls (pageChange)=" paginationConfig.currentPage = $event"
+                             [id]="paginationId"></pagination-controls>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4" *ngFor="let pilacoin of pilacoins | paginate: paginationConfig ">
+            <div class="card mt-4">
+                <div class="list-group list-group-flush">
+                    <h5 class="list-group-item">ID Criador: {{ pilacoin.idCriador }}</h5>
+                    <h5 class="list-group-item overflow">Chave Criador: {{ pilacoin.chaveCriador }}</h5>
+                    <h5 class="list-group-item">Data Criacao: {{ pilacoin.dataCriacao }}</h5>
+                    <h5 class="list-group-item">Status: {{ pilacoin.status }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

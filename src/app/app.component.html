@@ -1,63 +1,31 @@
-
-<div>
-  <section class="ftco-section">
-
-  <div class="container">
-    <div class="row justify-content-between">
-      <div class="col">
-        <a class="navbar-brand " href="index.html"><img class= "logo" src="assets/image/logo/logo.png"></a>
-      </div>
-      <div class="col d-flex justify-content-end icones-midia">
-        <div class="social-media">
-          <p class="mb-0 d-flex">
-            <a href="https://www.tiktok.com/@nikiaki_foods" class="d-flex align-items-center justify-content-center"><span class="fa"><img src="assets/image/header/tiktok.png"></span></a>
-            <a href="https://www.instagram.com/nikiaki_foods/" class="d-flex align-items-center justify-content-center"><span class="fa"><img src="assets/image/header/instagram.png"></span></a>
-            <a href="https://www.linkedin.com/company/niki-aki/about/" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><img src="assets/image/header/linkedin.png"></span></a>
-            <a href="https://m.kwai.com/user/3xjujn4yg9der6g?source_type=glg&source=kelly&bkt=7114e4a6610bea1aee6083d3a5fe2d8e&share_item_type=profile&cc=share_searchengine" class="d-flex align-items-center justify-content-center"><span class="fa"><img src="assets/image/header/logo_kwai.png"></span></a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
   <div id="menu">
     <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
       <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="fa fa-bars"></span> Receitas
+          <span class="fa fa-bars"></span> Pilacoin
         </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a href="/admin" routerLink="admin" *ngIf="isLoggedIn" class="nav-link">Admin</a></li>
-            <li class="nav-item"><a href="/listagem-receitas"  class="nav-link">Listar Receitas</a></li>
-
-          </ul>
-
-          <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-            <li class="nav-item ">
-              <a href="/cadastrar-usuario" class="nav-link " routerLink="cadastrar-usuario">Sign Up</a>
-            </li>
-            <li class="nav-item funcoes">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item funcoes " *ngIf="!isLoggedIn">
               <a href="/login" class="nav-link " routerLink="login">Login</a>
             </li>
-          </ul>
+            <li class="nav-item">
+              <a href="/carteira"  class="nav-link">Carteira</a>
+            </li>
+            <li class="nav-item">
+              <a href="/bloco"  class="nav-link">Bloco</a>
+            </li>
 
-          <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-            <li class="nav-item funcoes">
-              <a href class="nav-link " (click)="logout()">LogOut</a>
+            <li class="nav-item">
+              <a href class="nav-link" (click)="logout()">LogOut</a>
             </li>
           </ul>
-
+       <ul class="navbar-nav ml-auto " *ngIf="isLoggedIn">
+       </ul>
         </div>
-      </div>
     </nav>
-    <!-- END nav -->
   </div>
-</section>
 
-<footer>
 
-</footer>
 <div class="container mt-3">
   <router-outlet></router-outlet>
-</div>
 </div>

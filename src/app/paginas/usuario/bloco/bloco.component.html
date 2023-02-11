@@ -1,0 +1,15 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let bloco of blocos ">
+      <div class="card mt-4">
+        <div class="list-group list-group-flush">
+          <h5 class="list-group-item">Id do Bloco: {{ bloco.id }}</h5>
+          <h5 class="list-group-item overflow">Chave Minerador: {{ bloco.chaveMinerador }}</h5>
+          <h5 class="list-group-item">Hash anterior: {{ bloco.hashBlocoAnterior }}</h5>
+          <h5 class="list-group-item">Status: {{ bloco.status }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
